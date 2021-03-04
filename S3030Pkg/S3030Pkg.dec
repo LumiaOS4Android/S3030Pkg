@@ -1,0 +1,28 @@
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = S3030Pkg
+  PACKAGE_GUID                   = 5fd522a5-b671-429f-957f-75113dd02435
+  PACKAGE_VERSION                = 0.1
+
+[Includes.common]
+  Include                        # Root include for the package
+
+[Guids.common]
+  gS3030PkgTokenSpaceGuid = { 0x4c59628e, 0x0a8a, 0x4099, { 0x8d, 0xe5, 0xf2, 0x08, 0xff, 0x80, 0xc4, 0xbf } }
+  gMTKPlatformTokenSpaceGuid = { 0x24b09abe, 0x4e47, 0x481c, { 0xa9, 0xad, 0xce, 0xf1, 0x2c, 0x39, 0x23, 0x27} }
+  gInternalTestPayloadGuid = { 0x05cd7984, 0x5e27, 0x441d, { 0xa2, 0x1e, 0x5b, 0x69, 0x19, 0xbb, 0x82, 0xd7 } }
+
+[PcdsFixedAtBuild.common]
+  # Simple FrameBuffer
+  gS3030PkgTokenSpaceGuid.PcdMipiFrameBufferAddress|0x00400000|UINT32|0x0000a400
+  gS3030PkgTokenSpaceGuid.PcdMipiFrameBufferWidth|480|UINT32|0x0000a401
+  gS3030PkgTokenSpaceGuid.PcdMipiFrameBufferHeight|800|UINT32|0x0000a402
+  gS3030PkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32|UINT32|0x0000a403
+
+  # SMBIOS
+  gS3030PkgTokenSpaceGuid.PcdSmbiosSystemModel|"OWN S3030"|VOID*|0x0000a301
+  gS3030PkgTokenSpaceGuid.PcdSmbiosProcessorModel|"Mediatek MT6582"|VOID*|0x0000a302
+  gS3030PkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"S3030"|VOID*|0x0000a303
+
+[PcdsFeatureFlag.common]
+  gS3030PkgTokenSpaceGuid.PcdLvdsEnable|FALSE|BOOLEAN|0x00001001
